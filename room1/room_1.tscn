@@ -1,0 +1,123 @@
+[gd_scene load_steps=14 format=3 uid="uid://ia8l0n2eohrh"]
+
+[ext_resource type="Script" path="res://room1/room_1.gd" id="1_650bq"]
+[ext_resource type="Texture2D" uid="uid://fc5jee1slr3e" path="res://interrogationRoom/bg.png" id="1_oun1b"]
+[ext_resource type="Texture2D" uid="uid://bxbr1rnmgibm" path="res://interrogationRoom/noor.png" id="2_5dw47"]
+[ext_resource type="Texture2D" uid="uid://d0vk5usphua0h" path="res://room1/ch1.1.png" id="3_aiksp"]
+[ext_resource type="Texture2D" uid="uid://cwfxhrcfaqjm5" path="res://room1/ch1.2.png" id="4_gjudw"]
+[ext_resource type="Texture2D" uid="uid://birm7xa1uq15a" path="res://room1/open book (1).png" id="6_wqlhi"]
+[ext_resource type="Texture2D" uid="uid://cns2uwbv7o0ct" path="res://room1/books.png" id="7_ydgoo"]
+[ext_resource type="Texture2D" uid="uid://b76q3w2kson8e" path="res://room1/mug.png" id="8_a3qd0"]
+[ext_resource type="Texture2D" uid="uid://b67ei3ifwklul" path="res://room1/water.png" id="9_pjqlg"]
+[ext_resource type="FontFile" uid="uid://chqtaudkyg5kf" path="res://fonts/Sarbaz.ttf" id="10_qevs6"]
+[ext_resource type="FontFile" uid="uid://bkipht6swt7to" path="res://fonts/Estedad-Black.ttf" id="11_hecfn"]
+[ext_resource type="AudioStream" uid="uid://dko3xodec8hx6" path="res://CrimeScene/musicCrimeScene.mp3" id="12_6dadi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wr66s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aiksp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gjudw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="room1" type="Node2D"]
+script = ExtResource("1_650bq")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(572, 555)
+scale = Vector2(0.392531, 0.392531)
+texture = ExtResource("1_oun1b")
+metadata/_edit_lock_ = true
+
+[node name="Noor" type="Sprite2D" parent="."]
+position = Vector2(568, 418)
+scale = Vector2(0.275144, 0.275144)
+texture = ExtResource("2_5dw47")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 408)
+scale = Vector2(0.317729, 0.317729)
+sprite_frames = SubResource("SpriteFrames_wr66s")
+frame_progress = 0.851782
+
+[node name="OpenBook(1)" type="Sprite2D" parent="."]
+position = Vector2(547, 577)
+scale = Vector2(0.107345, 0.107345)
+texture = ExtResource("6_wqlhi")
+
+[node name="Books" type="Sprite2D" parent="."]
+position = Vector2(885, 514)
+scale = Vector2(0.082057, 0.082057)
+texture = ExtResource("7_ydgoo")
+
+[node name="Mug" type="Sprite2D" parent="."]
+position = Vector2(444, 585.624)
+scale = Vector2(0.0421304, 0.0421304)
+texture = ExtResource("8_a3qd0")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(502, 520)
+scale = Vector2(0.0315204, 0.0315204)
+texture = ExtResource("9_pjqlg")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 449.0
+offset_top = 153.0
+offset_right = 648.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_qevs6")
+theme_override_font_sizes/font_size = 25
+text = "من امیر هستم.  من قاتل نیستم. من در زمان قتل جای دیگری بودم."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="left" type="Button" parent="."]
+offset_left = 102.0
+offset_top = 557.0
+offset_right = 398.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("11_hecfn")
+theme_override_font_sizes/font_size = 20
+text = "چقدر موسیقی گوش میدی؟"
+
+[node name="right" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 557.0
+offset_right = 946.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("11_hecfn")
+theme_override_font_sizes/font_size = 20
+text = "توضیح بده در ساعت ۹ دیشب کجا بودی؟"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 838.0
+offset_top = 312.0
+offset_right = 973.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("11_hecfn")
+text = "بازگشت به سالن"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_6dadi")
+volume_db = -3.0
+autoplay = true
+
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

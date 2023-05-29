@@ -1,0 +1,175 @@
+[gd_scene load_steps=13 format=3 uid="uid://b55bke7jmnvlm"]
+
+[ext_resource type="Texture2D" uid="uid://coavj4rpi3smb" path="res://Menu/bgMenu.png" id="1_6d68g"]
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_n3q5x"]
+[ext_resource type="FontFile" uid="uid://dkx0854mo77r5" path="res://fonts/IRANYekan-Black.ttf" id="2_yl7do"]
+[ext_resource type="StyleBox" uid="uid://bsdpklngq4s2p" path="res://Menu/buttonNormal.tres" id="3_sspla"]
+[ext_resource type="StyleBox" uid="uid://dfsgk2ikc1uqr" path="res://Menu/buttonHover.tres" id="4_c4l2o"]
+[ext_resource type="StyleBox" uid="uid://3pedlq3ise27" path="res://Menu/buttonPress.tres" id="5_jv7dg"]
+[ext_resource type="FontFile" uid="uid://bvekp6ndnpppg" path="res://fonts/IRANYekan-Bold.ttf" id="6_r5t3y"]
+[ext_resource type="FontFile" uid="uid://chqtaudkyg5kf" path="res://fonts/Sarbaz.ttf" id="8_166mx"]
+[ext_resource type="AudioStream" uid="uid://v6m0wxrfwlxi" path="res://Menu/musicMenu.mp3" id="9_mpxig"]
+[ext_resource type="FontFile" uid="uid://xspuvysvjxnl" path="res://fonts/Estedad-Bold.ttf" id="10_rlbtl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d58ww"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_776o6"]
+bg_color = Color(0, 0, 0, 0.968627)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n3q5x")
+metadata/_edit_lock_ = true
+
+[node name="BgMenu" type="Sprite2D" parent="."]
+position = Vector2(577.333, 325.5)
+scale = Vector2(1.78549, 1.78549)
+texture = ExtResource("1_6d68g")
+metadata/_edit_lock_ = true
+
+[node name="start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -114.0
+offset_right = 117.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl7do")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("3_sspla")
+theme_override_styles/hover = ExtResource("4_c4l2o")
+theme_override_styles/pressed = ExtResource("5_jv7dg")
+theme_override_styles/focus = ExtResource("5_jv7dg")
+text = "شروع بازی"
+
+[node name="guide" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = 38.0
+offset_right = 117.5
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_r5t3y")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("3_sspla")
+theme_override_styles/hover = ExtResource("4_c4l2o")
+theme_override_styles/pressed = ExtResource("5_jv7dg")
+theme_override_styles/focus = ExtResource("5_jv7dg")
+text = "راهنما"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = 183.0
+offset_right = 117.5
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_r5t3y")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("3_sspla")
+theme_override_styles/hover = ExtResource("4_c4l2o")
+theme_override_styles/pressed = ExtResource("5_jv7dg")
+theme_override_styles/focus = ExtResource("5_jv7dg")
+text = "خروج"
+
+[node name="name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.5
+offset_top = 60.0
+offset_right = 132.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_166mx")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/normal = SubResource("StyleBoxFlat_d58ww")
+text = "راز شهر"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mpxig")
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -17.0
+offset_top = -13.0
+offset_right = 1175.0
+offset_bottom = 665.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_776o6")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -242.0
+offset_right = 510.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_r5t3y")
+theme_override_font_sizes/font_size = 41
+text = "به نام خدا
+این بازی توسط تیم شهباز در تاریخ ۱۵ اردیبهشت تولید شد.
+برنامه نویسی : علی نبی لو عظیمی ، کیارش ملکی
+طراحی و گرافیک: سیدعلیرضا سیدشیرازی
+ایده‌پردازی : هیچکس و همه !"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -181.0
+offset_right = 184.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("10_rlbtl")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = ExtResource("3_sspla")
+theme_override_styles/hover = ExtResource("4_c4l2o")
+theme_override_styles/pressed = ExtResource("5_jv7dg")
+theme_override_styles/focus = ExtResource("3_sspla")
+text = "بازگشت"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="guide" to="." method="_on_guide_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

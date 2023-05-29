@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfr7utsslwb7d"]
+
+[ext_resource type="Script" path="res://Objects/objects.gd" id="1_gnmn0"]
+[ext_resource type="FontFile" uid="uid://xspuvysvjxnl" path="res://fonts/Estedad-Bold.ttf" id="1_k7sib"]
+[ext_resource type="Texture2D" uid="uid://u7tcodr4gsps" path="res://Objects/hair.png" id="2_syaux"]
+[ext_resource type="Texture2D" uid="uid://bsv0i6ruq5fug" path="res://Objects/airpod.png" id="3_wkb2a"]
+[ext_resource type="Texture2D" uid="uid://dc2sw5fsoq34m" path="res://Objects/ring.png" id="4_ox8dc"]
+[ext_resource type="StyleBox" uid="uid://d17jyft48twbl" path="res://Objects/normalButton.tres" id="5_hjs48"]
+[ext_resource type="StyleBox" uid="uid://ck6vksjw043bs" path="res://Objects/hoverButton.tres" id="6_2pno7"]
+[ext_resource type="AudioStream" uid="uid://dko3xodec8hx6" path="res://CrimeScene/musicCrimeScene.mp3" id="8_lqgc1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qug0"]
+bg_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+
+[node name="objects" type="Node2D"]
+script = ExtResource("1_gnmn0")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -9.0
+offset_right = 1191.0
+offset_bottom = 672.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7qug0")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 296.0
+offset_top = 16.0
+offset_right = 847.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_k7sib")
+theme_override_font_sizes/font_size = 46
+text = "اجسام پیدا شده در صحنه جرم"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 798.0
+offset_top = 402.0
+offset_right = 1107.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_k7sib")
+theme_override_font_sizes/font_size = 46
+text = "تار مو"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = 402.0
+offset_right = 753.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_k7sib")
+theme_override_font_sizes/font_size = 46
+text = "هندزفری"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = 402.0
+offset_right = 364.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_k7sib")
+theme_override_font_sizes/font_size = 46
+text = "انگشتر"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hair" type="Sprite2D" parent="."]
+position = Vector2(950, 305)
+texture = ExtResource("2_syaux")
+
+[node name="Airpod" type="Sprite2D" parent="."]
+position = Vector2(602.75, 296.75)
+scale = Vector2(1.04106, 1.04106)
+texture = ExtResource("3_wkb2a")
+
+[node name="Ring" type="Sprite2D" parent="."]
+position = Vector2(236, 295.938)
+scale = Vector2(0.0898156, 0.0898156)
+texture = ExtResource("4_ox8dc")
+
+[node name="home" type="Button" parent="."]
+offset_left = 445.0
+offset_top = 522.0
+offset_right = 754.0
+offset_bottom = 615.0
+theme_override_colors/font_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("1_k7sib")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("5_hjs48")
+theme_override_styles/hover = ExtResource("6_2pno7")
+theme_override_styles/pressed = ExtResource("5_hjs48")
+theme_override_styles/focus = ExtResource("6_2pno7")
+text = "اتاق بازجـویـی"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lqgc1")
+volume_db = -3.0
+autoplay = true
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

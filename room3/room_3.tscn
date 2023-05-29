@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=3 uid="uid://wtei5cpnw8e1"]
+
+[ext_resource type="Script" path="res://room3/room_3.gd" id="1_8ki4q"]
+[ext_resource type="Texture2D" uid="uid://fc5jee1slr3e" path="res://interrogationRoom/bg.png" id="2_qyxx4"]
+[ext_resource type="Texture2D" uid="uid://bxbr1rnmgibm" path="res://interrogationRoom/noor.png" id="3_72v00"]
+[ext_resource type="Texture2D" uid="uid://d1m30n23dw700" path="res://room3/ch3.1.png" id="4_a3bhw"]
+[ext_resource type="Texture2D" uid="uid://daa622rsd08cy" path="res://room3/ch3.2.png" id="5_8jmpe"]
+[ext_resource type="Texture2D" uid="uid://birm7xa1uq15a" path="res://room1/open book (1).png" id="6_u8qdl"]
+[ext_resource type="Texture2D" uid="uid://cns2uwbv7o0ct" path="res://room1/books.png" id="7_nsmqs"]
+[ext_resource type="Texture2D" uid="uid://b76q3w2kson8e" path="res://room1/mug.png" id="8_p1hv0"]
+[ext_resource type="Texture2D" uid="uid://b67ei3ifwklul" path="res://room1/water.png" id="9_qb6o1"]
+[ext_resource type="FontFile" uid="uid://chqtaudkyg5kf" path="res://fonts/Sarbaz.ttf" id="10_gnj7j"]
+[ext_resource type="FontFile" uid="uid://bkipht6swt7to" path="res://fonts/Estedad-Black.ttf" id="11_xjv10"]
+[ext_resource type="AudioStream" uid="uid://dko3xodec8hx6" path="res://CrimeScene/musicCrimeScene.mp3" id="12_um76b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ym5eu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a3bhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8jmpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="room3" type="Node2D"]
+script = ExtResource("1_8ki4q")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(572, 555)
+scale = Vector2(0.392531, 0.392531)
+texture = ExtResource("2_qyxx4")
+metadata/_edit_lock_ = true
+
+[node name="Noor" type="Sprite2D" parent="."]
+position = Vector2(568, 418)
+scale = Vector2(0.275144, 0.275144)
+texture = ExtResource("3_72v00")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 418)
+scale = Vector2(0.174198, 0.174198)
+sprite_frames = SubResource("SpriteFrames_ym5eu")
+
+[node name="OpenBook(1)" type="Sprite2D" parent="."]
+position = Vector2(547, 577)
+scale = Vector2(0.107345, 0.107345)
+texture = ExtResource("6_u8qdl")
+
+[node name="Books" type="Sprite2D" parent="."]
+position = Vector2(885, 514)
+scale = Vector2(0.082057, 0.082057)
+texture = ExtResource("7_nsmqs")
+
+[node name="Mug" type="Sprite2D" parent="."]
+position = Vector2(444, 585.624)
+scale = Vector2(0.0421304, 0.0421304)
+texture = ExtResource("8_p1hv0")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(502, 520)
+scale = Vector2(0.0315204, 0.0315204)
+texture = ExtResource("9_qb6o1")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 449.0
+offset_top = 153.0
+offset_right = 648.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_gnj7j")
+theme_override_font_sizes/font_size = 25
+text = "من ابراهیم هستم.چرا سر هر اتفاقی من باید اینجا باشم؟"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="left" type="Button" parent="."]
+offset_left = 102.0
+offset_top = 557.0
+offset_right = 398.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("11_xjv10")
+theme_override_font_sizes/font_size = 20
+text = "در رابطه با مشکل شخصیت با تاجر توضیح بده"
+
+[node name="right" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 557.0
+offset_right = 946.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("11_xjv10")
+theme_override_font_sizes/font_size = 20
+text = "شغلت چیه ؟"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 838.0
+offset_top = 312.0
+offset_right = 973.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("11_xjv10")
+text = "بازگشت به سالن"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_um76b")
+volume_db = -3.0
+autoplay = true
+
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

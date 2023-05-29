@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://brf8u7usmluxs"]
+
+[ext_resource type="Script" path="res://interrogationRoom/interrogationRoom.gd" id="1_aeby8"]
+[ext_resource type="Texture2D" uid="uid://bm0edq5hlyy32" path="res://interrogationRoom/bgp.png" id="3_vg2kn"]
+[ext_resource type="FontFile" uid="uid://bkipht6swt7to" path="res://fonts/Estedad-Black.ttf" id="4_adsch"]
+[ext_resource type="StyleBox" uid="uid://da41f7wbm0o1" path="res://interrogationRoom/normal.tres" id="5_lj7is"]
+[ext_resource type="StyleBox" uid="uid://cfv257ne0ald7" path="res://interrogationRoom/hover.tres" id="6_1u1ss"]
+[ext_resource type="AudioStream" uid="uid://dko3xodec8hx6" path="res://CrimeScene/musicCrimeScene.mp3" id="6_p8hq8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp214"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkbvs"]
+bg_color = Color(0, 0, 0, 0.235294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q60c"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nwg7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="interrogationRoom" type="Node2D"]
+script = ExtResource("1_aeby8")
+
+[node name="Bgp" type="Sprite2D" parent="."]
+position = Vector2(545.022, 226)
+scale = Vector2(0.583489, 0.583489)
+texture = ExtResource("3_vg2kn")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 736.022
+offset_top = 194.0
+offset_right = 846.022
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("4_adsch")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp214")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkbvs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q60c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2nwg7")
+text = "متهم اول"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 433.022
+offset_top = 196.0
+offset_right = 543.022
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("4_adsch")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp214")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkbvs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q60c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2nwg7")
+text = "متهم دوم"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 115.022
+offset_top = 198.0
+offset_right = 225.022
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("4_adsch")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp214")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkbvs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q60c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2nwg7")
+text = "متهم سوم"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 44.0
+offset_right = 128.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("4_adsch")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_lj7is")
+theme_override_styles/hover = ExtResource("6_1u1ss")
+theme_override_styles/pressed = ExtResource("5_lj7is")
+theme_override_styles/focus = ExtResource("5_lj7is")
+text = "سرنخ ها"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 300.0
+offset_right = 1128.0
+offset_bottom = 343.0
+theme_override_fonts/font = ExtResource("4_adsch")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_lj7is")
+theme_override_styles/hover = ExtResource("6_1u1ss")
+theme_override_styles/pressed = ExtResource("5_lj7is")
+theme_override_styles/focus = ExtResource("5_lj7is")
+text = "تصمیم گیری نهایی"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p8hq8")
+volume_db = -3.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

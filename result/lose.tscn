@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4qravk2w6hdu"]
+
+[ext_resource type="Script" path="res://result/lose.gd" id="1_2q0hx"]
+[ext_resource type="Texture2D" uid="uid://dgee61xlaiwt6" path="res://result/lose (1).png" id="1_kfxji"]
+[ext_resource type="FontFile" uid="uid://bkipht6swt7to" path="res://fonts/Estedad-Black.ttf" id="3_b0gy1"]
+[ext_resource type="Texture2D" uid="uid://bp7e7o5c108v" path="res://result/_78170ac1-fd26-4cc0-9a8a-a397c0cb8940.png" id="3_o488a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f6rt"]
+bg_color = Color(0.027451, 0.0745098, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_auku7"]
+load_path = "res://.godot/imported/lose.png-840a775c9d26ea1630e0bc5335e768bb.ctex"
+
+[node name="lose" type="Node2D"]
+script = ExtResource("1_2q0hx")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 1214.0
+offset_bottom = 674.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4f6rt")
+
+[node name="Lose" type="Sprite2D" parent="."]
+position = Vector2(301, 384)
+scale = Vector2(0.321295, 0.321295)
+texture = SubResource("CompressedTexture2D_auku7")
+
+[node name="Lose(1)" type="Sprite2D" parent="."]
+position = Vector2(911, 352)
+scale = Vector2(0.287898, 0.287898)
+texture = ExtResource("1_kfxji")
+
+[node name="78170Ac1-fd26-4Cc0-9a8a-a397c0Cb8940" type="Sprite2D" parent="."]
+position = Vector2(575, 253)
+scale = Vector2(1.16797, 1.16797)
+texture = ExtResource("3_o488a")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 107.0
+offset_right = 390.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_b0gy1")
+theme_override_font_sizes/font_size = 40
+text = "شما باختید! 
+بازگشت به منو"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

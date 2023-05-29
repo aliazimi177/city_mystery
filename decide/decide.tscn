@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhc8vddg3mfou"]
+
+[ext_resource type="Script" path="res://decide.gd" id="1_t2l3w"]
+[ext_resource type="FontFile" uid="uid://xspuvysvjxnl" path="res://fonts/Estedad-Bold.ttf" id="2_1i22y"]
+[ext_resource type="Texture2D" uid="uid://05enlul2q8f1" path="res://decide/ch3f.png" id="3_2q2nc"]
+[ext_resource type="Texture2D" uid="uid://c8kv4usd1t8fx" path="res://decide/ch2f.png" id="4_sq742"]
+[ext_resource type="Texture2D" uid="uid://dirx0iq6nlxn2" path="res://decide/ch1f.png" id="5_80h4p"]
+[ext_resource type="StyleBox" uid="uid://d17jyft48twbl" path="res://Objects/normalButton.tres" id="6_h1xju"]
+[ext_resource type="StyleBox" uid="uid://ck6vksjw043bs" path="res://Objects/hoverButton.tres" id="7_hiuxe"]
+[ext_resource type="AudioStream" uid="uid://dko3xodec8hx6" path="res://CrimeScene/musicCrimeScene.mp3" id="8_nl8o5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnvq1"]
+bg_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+
+[node name="decide" type="Node2D"]
+script = ExtResource("1_t2l3w")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -9.0
+offset_right = 1191.0
+offset_bottom = 672.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xnvq1")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 296.0
+offset_top = 16.0
+offset_right = 847.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1i22y")
+theme_override_font_sizes/font_size = 46
+text = "تصمیم گیری نهایی برای محاکمه قاتل"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ring" type="Sprite2D" parent="."]
+position = Vector2(236, 274.938)
+scale = Vector2(0.237325, 0.237325)
+texture = ExtResource("3_2q2nc")
+
+[node name="Ring2" type="Sprite2D" parent="."]
+position = Vector2(595, 274.938)
+scale = Vector2(0.237325, 0.237325)
+texture = ExtResource("4_sq742")
+
+[node name="Ring3" type="Sprite2D" parent="."]
+position = Vector2(941, 274.938)
+scale = Vector2(0.237325, 0.237325)
+texture = ExtResource("5_80h4p")
+
+[node name="home" type="Button" parent="."]
+offset_left = 431.0
+offset_top = 529.0
+offset_right = 740.0
+offset_bottom = 622.0
+theme_override_colors/font_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("2_1i22y")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_h1xju")
+theme_override_styles/hover = ExtResource("7_hiuxe")
+theme_override_styles/pressed = ExtResource("6_h1xju")
+theme_override_styles/focus = ExtResource("7_hiuxe")
+text = "اتاق بازجـویـی"
+
+[node name="home2" type="Button" parent="."]
+offset_left = 114.0
+offset_top = 394.0
+offset_right = 341.0
+offset_bottom = 487.0
+theme_override_colors/font_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("2_1i22y")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_h1xju")
+theme_override_styles/hover = ExtResource("7_hiuxe")
+theme_override_styles/pressed = ExtResource("6_h1xju")
+theme_override_styles/focus = ExtResource("7_hiuxe")
+text = "ابراهیم"
+
+[node name="home3" type="Button" parent="."]
+offset_left = 477.0
+offset_top = 394.0
+offset_right = 704.0
+offset_bottom = 487.0
+theme_override_colors/font_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("2_1i22y")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_h1xju")
+theme_override_styles/hover = ExtResource("7_hiuxe")
+theme_override_styles/pressed = ExtResource("6_h1xju")
+theme_override_styles/focus = ExtResource("7_hiuxe")
+text = "اردشیر"
+
+[node name="home4" type="Button" parent="."]
+offset_left = 826.0
+offset_top = 394.0
+offset_right = 1053.0
+offset_bottom = 487.0
+theme_override_colors/font_color = Color(0.00392157, 0.0627451, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("2_1i22y")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_h1xju")
+theme_override_styles/hover = ExtResource("7_hiuxe")
+theme_override_styles/pressed = ExtResource("6_h1xju")
+theme_override_styles/focus = ExtResource("7_hiuxe")
+text = "امیر"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nl8o5")
+volume_db = -3.0
+autoplay = true
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="home2" to="." method="_on_home_2_pressed"]
+[connection signal="pressed" from="home3" to="." method="_on_home_3_pressed"]
+[connection signal="pressed" from="home4" to="." method="_on_home_4_pressed"]

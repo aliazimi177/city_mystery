@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd1k1l0ypihd6"]
+
+[ext_resource type="Script" path="res://result/win.gd" id="1_v4s6n"]
+[ext_resource type="Texture2D" uid="uid://cbfvf4g51vtl3" path="res://result/win (1).png" id="1_wc3eq"]
+[ext_resource type="FontFile" uid="uid://bkipht6swt7to" path="res://fonts/Estedad-Black.ttf" id="3_iy41n"]
+[ext_resource type="Texture2D" uid="uid://dgsjehioortki" path="res://result/_19759fd6-8f11-410b-8a4c-bfabe5d778a9.jpg" id="3_vhdxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fcqw"]
+bg_color = Color(0.027451, 0.0745098, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f26b3"]
+load_path = "res://.godot/imported/win.png-d4ab71e22925846a400182f96a7034f1.ctex"
+
+[node name="win" type="Node2D"]
+script = ExtResource("1_v4s6n")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 1214.0
+offset_bottom = 674.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fcqw")
+
+[node name="Win" type="Sprite2D" parent="."]
+position = Vector2(277, 389)
+scale = Vector2(0.285181, 0.285181)
+texture = SubResource("CompressedTexture2D_f26b3")
+
+[node name="Win(1)" type="Sprite2D" parent="."]
+position = Vector2(834, 348)
+scale = Vector2(0.282841, 0.282841)
+texture = ExtResource("1_wc3eq")
+
+[node name="19759Fd6-8f11-410b-8a4c-bfabe5d778a9" type="Sprite2D" parent="."]
+position = Vector2(563.499, 434.501)
+scale = Vector2(1.19043, 1.19043)
+texture = ExtResource("3_vhdxo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 797.0
+offset_top = 170.0
+offset_right = 1101.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("3_iy41n")
+theme_override_font_sizes/font_size = 40
+text = "شما بردید!
+بازگشت به منو"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

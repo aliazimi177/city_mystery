@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://clok4sygmuyum"]
+
+[ext_resource type="Script" path="res://CrimeScene/crime_scene.gd" id="1_1cj0v"]
+[ext_resource type="Texture2D" uid="uid://bp6d6uptywwux" path="res://CrimeScene/bg.png" id="1_oslxw"]
+[ext_resource type="AudioStream" uid="uid://234ikky88w66" path="res://CrimeScene/intro1.mp3" id="3_2yvyg"]
+[ext_resource type="AudioStream" uid="uid://dko3xodec8hx6" path="res://CrimeScene/musicCrimeScene.mp3" id="4_kf6km"]
+[ext_resource type="AudioStream" uid="uid://c7w3n8r10idj0" path="res://CrimeScene/DetectiveAsk.mp3" id="5_ffni8"]
+
+[node name="CrimeScene" type="Node2D"]
+script = ExtResource("1_1cj0v")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(807.778, -92.3753)
+scale = Vector2(0.735972, 0.73597)
+texture = ExtResource("1_oslxw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2yvyg")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kf6km")
+volume_db = -3.0
+autoplay = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ffni8")
+autoplay = true
